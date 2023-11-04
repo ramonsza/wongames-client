@@ -7,8 +7,8 @@ module.exports = {
     '!src/app/**', // should be tested in e2e
     '!src/lib/registry.tsx',
     '!src/types/**',
-    '!src/styles/**',
-    '!src/components/**/stories.tsx'
+    '!src/**/stories.tsx',
+    '!src/styles/**'
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/'],
@@ -20,6 +20,7 @@ module.exports = {
   // we should to force it to use the browser version
   moduleNameMapper: {
     '^styled-components':
-      'styled-components/dist/styled-components.browser.cjs.js'
+      'styled-components/dist/styled-components.browser.cjs.js',
+    '@/(.*)': '<rootDir>/src/$1'
   }
 }
