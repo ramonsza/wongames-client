@@ -7,7 +7,7 @@ const config = {
     options: {}
   },
   docs: {
-    autodocs: true
+    autodocs: false
   },
   webpackFinal: (config) => {
     config.resolve.modules.push(`${process.cwd()}/src`)
