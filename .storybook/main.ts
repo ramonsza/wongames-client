@@ -1,3 +1,5 @@
+import path from 'path'
+
 const config = {
   stories: ['../src/components/**/stories.tsx'],
   staticDirs: ['../public'],
@@ -11,6 +13,10 @@ const config = {
   },
   webpackFinal: (config) => {
     config.resolve.modules.push(`${process.cwd()}/src`)
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': `${process.cwd()}/src`
+    }
     return config
   }
 }
