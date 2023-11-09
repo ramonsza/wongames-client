@@ -42,4 +42,14 @@ describe('<Button />', () => {
 
     expect(container.firstChild).toMatchSnapshot()
   })
+
+  it('should render a full width version', () => {
+    const { container } = renderWithTheme(<Button $fullWidth>Buy Now</Button>)
+
+    expect(screen.getByRole('button', { name: /Buy Now/i })).toHaveStyle({
+      width: '100%'
+    })
+
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })
