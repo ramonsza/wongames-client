@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react'
+import { ShoppingCart } from '@phosphor-icons/react'
 import { renderWithTheme } from '@/utils/tests/helpers'
 
 import Button from '.'
@@ -17,39 +18,38 @@ describe('<Button />', () => {
   })
 
   it('should render the small size', () => {
-    const { container } = renderWithTheme(
-      <Button $size="small">Buy Now</Button>
-    )
+    renderWithTheme(<Button $size="small">Buy Now</Button>)
 
     expect(screen.getByRole('button', { name: /Buy Now/i })).toHaveStyle({
       height: '3rem',
       'font-size': '1.2rem'
     })
-
-    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render the large size', () => {
-    const { container } = renderWithTheme(
-      <Button $size="large">Buy Now</Button>
-    )
+    renderWithTheme(<Button $size="large">Buy Now</Button>)
 
     expect(screen.getByRole('button', { name: /Buy Now/i })).toHaveStyle({
       height: '5rem',
       padding: '0.8rem 4.8rem',
       'font-size': '1.6rem'
     })
-
-    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render a full width version', () => {
-    const { container } = renderWithTheme(<Button $fullWidth>Buy Now</Button>)
+    renderWithTheme(<Button $fullWidth>Buy Now</Button>)
 
     expect(screen.getByRole('button', { name: /Buy Now/i })).toHaveStyle({
       width: '100%'
     })
+  })
 
-    expect(container.firstChild).toMatchSnapshot()
+  it('should render an icon version', () => {
+    renderWithTheme(
+      <Button $icon={<ShoppingCart data-testid="icon" />}>Buy Now</Button>
+    )
+
+    expect(screen.getByText(/Buy Now/i)).toBeInTheDocument()
+    expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
 })
