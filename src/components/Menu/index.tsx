@@ -9,6 +9,7 @@ import Button from '@/components/Button'
 import * as S from './styles'
 
 import { useState } from 'react'
+import MediaMatch from '@/components/MediaMatch'
 
 export type MenuProps = {
   $username?: string
@@ -19,12 +20,22 @@ const Menu = ({ $username }: MenuProps) => {
 
   return (
     <S.Wrapper>
-      <S.IconWrapper onClick={() => setIsOpen(true)}>
-        <MenuIcon aria-label="Open Menu" size={24} />
-      </S.IconWrapper>
+      <MediaMatch $lessThan="medium">
+        <S.IconWrapper onClick={() => setIsOpen(true)}>
+          <MenuIcon aria-label="Open Menu" size={24} />
+        </S.IconWrapper>
+      </MediaMatch>
       <S.LogoWrapper>
         <Logo $hideOnMobile />
       </S.LogoWrapper>
+
+      <MediaMatch $greaterThan="medium">
+        <S.MenuNav>
+          <S.MenuLink href="#">Home</S.MenuLink>
+          <S.MenuLink href="#">Explore</S.MenuLink>
+        </S.MenuNav>
+      </MediaMatch>
+
       <S.MenuGroup>
         <S.IconWrapper>
           <SearchIcon aria-label="Search" size={24} />
@@ -33,6 +44,12 @@ const Menu = ({ $username }: MenuProps) => {
         <S.IconWrapper>
           <ShoppingCartIcon aria-label="Open Shopping Cart" size={24} />
         </S.IconWrapper>
+
+        {!$username && (
+          <MediaMatch $greaterThan="medium">
+            <Button>Sign in</Button>
+          </MediaMatch>
+        )}
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} $isOpen={isOpen}>
