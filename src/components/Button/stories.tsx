@@ -26,3 +26,11 @@ export const WithIcon: Story = {
     }
   }
 }
+
+export const AsLink: Story = {
+  args: {
+    as: 'a',
+    href: '/link',
+    children: 'Buy Now'
+  }
+}
