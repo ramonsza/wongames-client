@@ -10,6 +10,6 @@ type Story = StoryObj<typeof Logo>
 
 export const Default: Story = {
   args: {
-    color: 'black'
+    $color: 'black'
   }
 }
