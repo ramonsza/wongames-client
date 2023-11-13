@@ -13,12 +13,14 @@ const args = {
 
 describe('<Banner />', () => {
   it('should render correctly', () => {
-    renderWithTheme(<Banner {...args} />)
+    const { container } = renderWithTheme(<Banner {...args} />)
 
     expect(
       screen.getByRole('heading', { name: /Defy death/i })
     ).toBeInTheDocument()
 
     expect(screen.getByRole('img', { name: /Defy death/i })).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

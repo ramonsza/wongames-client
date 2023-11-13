@@ -15,5 +15,8 @@ export const Default: Story = {
     subtitle: '<p>Play the new <strong>CrashLands</strong> season</p>',
     buttonLabel: 'Buy now',
     buttonLink: '/games/defy-death'
+  },
+  parameters: {
+    layout: 'fullscreen'
   }
 }
