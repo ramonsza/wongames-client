@@ -18,6 +18,16 @@ export const Default: Story = {
     title: 'Population Zero',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x140',
-    price: 'R$ 235,00'
+    price: 'R$ 235,00',
+    promotionalPrice: 'R$ 200,00',
+    ribbon: 'R$ 35 OFF',
+    ribbonColor: 'primary',
+    ribbonSize: 'small'
+  },
+  argTypes: {
+    onFav: {
+      action: 'clicked'
+    },
+    ribbon: { type: 'string' }
   }
 }
