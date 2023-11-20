@@ -10,7 +10,7 @@ export const Default: StoryObj = {
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
-      default: 'dark'
+      default: 'won-dark'
     }
   }
 }

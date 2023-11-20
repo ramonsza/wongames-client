@@ -1,5 +1,3 @@
-import path from 'path'
-
 const config = {
   stories: ['../src/components/**/stories.tsx'],
   staticDirs: ['../public'],
