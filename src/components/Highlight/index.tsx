@@ -1,7 +1,7 @@
 import Button from '@/components/Button'
 import * as S from './styles'
 
-type HighlightProps = {
+export type HighlightProps = {
   title: string
   subtitle: string
   backgroundImage: string

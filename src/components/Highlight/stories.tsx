@@ -1,9 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react'
 import Highlight from '.'
+import item from './mock'
 
 export default {
   title: 'Highlight',
-  component: Highlight
+  component: Highlight,
+  args: { ...item }
 } as Meta
 
 type Story = StoryObj<typeof Highlight>
@@ -13,14 +15,7 @@ export const Default: Story = {
     <div style={{ maxWidth: '104rem' }}>
       <Highlight {...args} />
     </div>
-  ),
-  args: {
-    title: `Read Dead it's back`,
-    subtitle: `Come see John's new adventure`,
-    backgroundImage: '/img/red-dead-img.jpg',
-    buttonLabel: 'Buy now',
-    buttonLink: '/rdr2'
-  }
+  )
 }
 
 export const WithFloatImage: Story = {
@@ -30,11 +25,6 @@ export const WithFloatImage: Story = {
     </div>
   ),
   args: {
-    title: `Read Dead it's back`,
-    subtitle: `Come see John's new adventure`,
-    backgroundImage: '/img/red-dead-img.jpg',
-    floatImage: '/img/red-dead-float.png',
-    buttonLabel: 'Buy now',
-    buttonLink: '/rdr2'
+    floatImage: '/img/red-dead-float.png'
   }
 }
