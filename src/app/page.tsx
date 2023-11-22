@@ -1,4 +1,3 @@
-'use client'
 import HomeTemplate, { HomeTemplateProps } from '@/templates/Home/index'
 
 import bannersMock from '@/components/BannerSlider/mock'

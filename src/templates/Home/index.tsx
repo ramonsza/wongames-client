@@ -1,3 +1,4 @@
+'use client'
 import { BannerProps } from '@/components/Banner'
 import { GameCardProps } from '@/components/GameCard'
 import Highlight, { HighlightProps } from '@/components/Highlight'
