@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   CaretLeft as ArrowLeft,
   CaretRight as ArrowRight
@@ -7,6 +8,19 @@ import GameCard, { GameCardProps } from '@/components/GameCard'
 import Slider, { SliderSettings } from '@/components/Slider'
 
 import * as S from './styles'
+import { CustomArrowProps } from 'react-slick'
+
+const NextArrow = ({
+  currentSlide,
+  slideCount,
+  ...props
+}: CustomArrowProps) => <ArrowRight {...props}></ArrowRight>
+
+const PrevArrow = ({
+  slideCount,
+  currentSlide,
+  ...props
+}: CustomArrowProps) => <ArrowLeft {...props}></ArrowLeft>
 
 const settings: SliderSettings = {
   slidesToShow: 4,
@@ -42,8 +56,8 @@ const settings: SliderSettings = {
       }
     }
   ],
-  nextArrow: <ArrowRight aria-label="next games" />,
-  prevArrow: <ArrowLeft aria-label="previous games" />
+  nextArrow: <NextArrow aria-label="next games" />,
+  prevArrow: <PrevArrow aria-label="previous games" />
 }
 
 export type GameCardSliderProps = {
