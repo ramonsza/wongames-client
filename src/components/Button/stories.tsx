@@ -4,7 +4,12 @@ import Button from '.'
 
 export default {
   title: 'Button',
-  component: Button
+  component: Button,
+  argTypes: {
+    $icon: {
+      control: false
+    }
+  }
 } as Meta
 
 type Story = StoryObj<typeof Button>
@@ -19,11 +24,6 @@ export const WithIcon: Story = {
   args: {
     children: 'Buy Now',
     $icon: <ShoppingCart />
-  },
-  argTypes: {
-    $icon: {
-      control: false
-    }
   }
 }
 
