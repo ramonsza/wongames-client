@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { DefaultTheme, css } from 'styled-components'
 
 export const InputWrapper = styled.div`
   ${({ theme }) => css`
@@ -55,4 +55,26 @@ export const Label = styled.label`
   `}
 `
 
-export const Wrapper = styled.div``
+const wrapperModifiers = {
+  disabled: (theme: DefaultTheme) => css`
+    ${Label},
+    ${Input},
+    ${Icon} {
+      cursor: not-allowed;
+      color: ${theme.colors.gray};
+      &::placeholder {
+        color: currentColor;
+      }
+    }
+  `
+}
+
+type WrapperProps = {
+  $disable: boolean
+}
+
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ theme, $disable }) => css`
+    ${$disable && wrapperModifiers.disabled(theme)}
+  `}
+`
