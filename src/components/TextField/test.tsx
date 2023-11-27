@@ -1,5 +1,5 @@
 import { screen, waitFor } from '@testing-library/react'
-
+import { EnvelopeSimple as MailIcon } from '@phosphor-icons/react'
 import TextField from '.'
 import { renderWithTheme } from '@/utils/tests/helpers'
 import userEvent from '@testing-library/user-event'
@@ -55,5 +55,19 @@ describe('<TextField />', () => {
 
     await userEvent.tab()
     expect(input).toHaveFocus()
+  })
+
+  it('Renders with Icon', () => {
+    renderWithTheme(<TextField icon={<MailIcon data-testid="icon" />} />)
+
+    expect(screen.getByTestId('icon')).toBeInTheDocument()
+  })
+
+  it('Renders with Icon on the right side', () => {
+    renderWithTheme(
+      <TextField icon={<MailIcon data-testid="icon" />} iconPosition="right" />
+    )
+
+    expect(screen.getByTestId('icon').parentElement).toHaveStyle({ order: 1 })
   })
 })

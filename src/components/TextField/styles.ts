@@ -14,12 +14,32 @@ export const InputWrapper = styled.div`
   `}
 `
 
-export const Input = styled.input`
-  ${({ theme }) => css`
+type IconPositionProps = {
+  $iconPosition: 'left' | 'right'
+}
+
+export const Icon = styled.div<IconPositionProps>`
+  ${({ theme, $iconPosition }) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2rem;
+    color: ${theme.colors.gray};
+    & > svg {
+      width: 100%;
+    }
+
+    order: ${$iconPosition === 'left' ? 0 : 1};
+  `}
+`
+
+export const Input = styled.input<IconPositionProps>`
+  ${({ theme, $iconPosition }) => css`
     color: ${theme.colors.black};
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.medium};
     padding: ${theme.spacings.xxsmall} 0;
+    padding-${$iconPosition}: ${theme.spacings.xxsmall};
     background: transparent;
     border: 0;
     outline: none;

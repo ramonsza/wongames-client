@@ -1,4 +1,6 @@
+import { EnvelopeSimple as MailIcon } from '@phosphor-icons/react'
 import { Meta, StoryObj } from '@storybook/react'
+
 import TextField from '.'
 
 export default {
@@ -12,8 +14,22 @@ export default {
     placeholder: 'john.cage@gmail.com'
   },
   argTypes: {
-    onInput: { action: 'changed' }
+    onInput: { action: 'changed' },
+    icon: {
+      control: false
+    }
   }
 } as Meta
 
-export const Default: StoryObj = {}
+type Story = StoryObj<typeof TextField>
+
+export const Default: Story = {
+  render: (args) => (
+    <div style={{ maxWidth: 300, padding: 15 }}>
+      <TextField {...args} />
+    </div>
+  ),
+  args: {
+    icon: <MailIcon size={22}></MailIcon>
+  }
+}
