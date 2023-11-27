@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> Renders with error 1`] = `
+.c4 {
+  display: flex;
+  background: #EAEAEA;
+  border-radius: 0.2rem;
+  padding: 0 1.6rem;
+  border: 0.2rem solid;
+  border-color: #EAEAEA;
+}
+
+.c4:focus-within {
+  box-shadow: 0 0 0.5rem #F231A5;
+}
+
+.c6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2rem;
+  color: #8F8F8F;
+  order: 0;
+}
+
+.c6>svg {
+  width: 100%;
+}
+
+.c7 {
+  color: #030517;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  font-size: 1.6rem;
+  padding: 0.8rem 0;
+  padding-left: 0.8rem;
+  background: transparent;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.c2 {
+  font-size: 1.4rem;
+  color: #030517;
+  cursor: pointer;
+}
+
+.c0 .c3 {
+  border-color: #FF6347;
+}
+
+.c0 .c1,
+.c0 .c5 {
+  color: #FF6347;
+}
+
+.c8 {
+  color: #FF6347;
+  font-size: 1.2rem;
+}
+
+<div
+  class="c0"
+>
+  <label
+    class="c1 c2"
+    for="TextField"
+  >
+    TextField
+  </label>
+  <div
+    class="c3 c4"
+  >
+    <div
+      class="c5 c6"
+    >
+      <svg
+        data-testid="icon"
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 256 256"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"
+        />
+      </svg>
+    </div>
+    <input
+      class="c7"
+      type="text"
+      value=""
+    />
+  </div>
+  <p
+    class="c8"
+  >
+    Error message
+  </p>
+</div>
+`;

@@ -33,3 +33,15 @@ export const Default: Story = {
     icon: <MailIcon size={22}></MailIcon>
   }
 }
+
+export const WithError: Story = {
+  render: (args) => (
+    <div style={{ maxWidth: 300, padding: 15 }}>
+      <TextField {...args} />
+    </div>
+  ),
+  args: {
+    icon: <MailIcon size={22}></MailIcon>,
+    error: 'Ops... something is wrong'
+  }
+}

@@ -66,15 +66,35 @@ const wrapperModifiers = {
         color: currentColor;
       }
     }
+  `,
+
+  error: (theme: DefaultTheme) => css`
+    ${InputWrapper} {
+      border-color: ${theme.colors.red};
+    }
+
+    ${Label},
+    ${Icon} {
+      color: ${theme.colors.red};
+    }
   `
 }
 
 type WrapperProps = {
   $disable: boolean
+  $error: boolean
 }
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${({ theme, $disable }) => css`
+  ${({ theme, $disable, $error }) => css`
     ${$disable && wrapperModifiers.disabled(theme)}
+    ${$error && wrapperModifiers.error(theme)}
+  `}
+`
+
+export const Error = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.red};
+    font-size: ${theme.font.sizes.xsmall};
   `}
 `
