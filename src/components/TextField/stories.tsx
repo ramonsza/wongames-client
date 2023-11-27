@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import TextField from '.'
 
 export default {
-  title: 'TextField',
+  title: 'Form/TextField',
   component: TextField,
   args: {
     label: 'E-mail',
