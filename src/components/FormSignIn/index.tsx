@@ -2,11 +2,12 @@ import Link from 'next/link'
 import { EnvelopeSimple as MailIcon } from '@phosphor-icons/react'
 import { LockKey as LockIcon } from '@phosphor-icons/react'
 import TextField from '@/components/TextField'
+import { FormWrapper, FormLink } from '@/components/Form/'
 import * as S from './styles'
 import Button from '@/components/Button'
 
 const FormSignIn = () => (
-  <S.Wrapper>
+  <FormWrapper>
     <form>
       <TextField
         name="email"
@@ -25,11 +26,11 @@ const FormSignIn = () => (
         Sign in now
       </Button>
 
-      <S.FormLink>
-        Don&apos;t have an account <Link href="/sing-in">Sign up</Link>
-      </S.FormLink>
+      <FormLink>
+        Don&apos;t have an account <Link href="/sign-up">Sign up</Link>
+      </FormLink>
     </form>
-  </S.Wrapper>
+  </FormWrapper>
 )
 
 export default FormSignIn

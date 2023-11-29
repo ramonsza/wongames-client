@@ -1,6 +1,11 @@
 'use client'
+import FormSignUp from '@/components/FormSignUp'
 import Auth from '@/templates/Auth'
 
 export default function SignUp() {
-  return <Auth title="Sign up">children</Auth>
+  return (
+    <Auth title="Sign up">
+      <FormSignUp />
+    </Auth>
+  )
 }
