@@ -5,7 +5,7 @@ import { renderWithTheme } from '@/utils/tests/helpers'
 
 describe('<FormSignIn />', () => {
   it('should render the form', () => {
-    renderWithTheme(<FormSignIn />)
+    const { container } = renderWithTheme(<FormSignIn />)
 
     expect(screen.getByPlaceholderText(/email/i)).toHaveAttribute(
       'type',
@@ -19,6 +19,8 @@ describe('<FormSignIn />', () => {
     expect(
       screen.getByRole('button', { name: /Sign in now/i })
     ).toBeInTheDocument()
+
+    expect(container.parentElement).toMatchSnapshot()
   })
 
   it('should render the forgot password link', () => {
