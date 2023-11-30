@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { List as MenuIcon } from '@phosphor-icons/react'
 import { ShoppingCart as ShoppingCartIcon } from '@phosphor-icons/react'
 import { MagnifyingGlass as SearchIcon } from '@phosphor-icons/react'
@@ -47,7 +48,9 @@ const Menu = ({ $username }: MenuProps) => {
 
         {!$username && (
           <MediaMatch $greaterThan="medium">
-            <Button>Sign in</Button>
+            <Link href="/sign-in" passHref legacyBehavior>
+              <Button as="a">Sign in</Button>
+            </Link>
           </MediaMatch>
         )}
       </S.MenuGroup>
@@ -72,13 +75,17 @@ const Menu = ({ $username }: MenuProps) => {
 
         {!$username && (
           <S.RegisterBox>
-            <Button $fullWidth $size="large">
-              Log in now
-            </Button>
+            <Link href="/sign-in" passHref legacyBehavior>
+              <Button $fullWidth $size="large">
+                Log in now
+              </Button>
+            </Link>
             <span>or</span>
-            <S.CreateAccount href="#" title="Sign Up">
-              Sign up
-            </S.CreateAccount>
+            <Link href="/sign-up" passHref legacyBehavior>
+              <S.CreateAccount href="#" title="Sign Up">
+                Sign up
+              </S.CreateAccount>
+            </Link>
           </S.RegisterBox>
         )}
       </S.MenuFull>
