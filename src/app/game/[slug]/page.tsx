@@ -1,14 +1,15 @@
-import Game from '@/templates/Game'
+import Game, { GameTemplateProps } from '@/templates/Game'
 
 import galleryMock from '@/components/Gallery/mock'
-import { GameDetailsProps } from '@/components/GameDetails'
+import gamesMock from '@/components/GameCardSlider/mock'
+import highlightMock from '@/components/Highlight/mock'
 export const dynamicParams = false
 
 export async function generateStaticParams() {
   return [{ slug: 'cyberpunk-2077' }]
 }
 
-async function getGameProps() {
+async function getGameProps(): Promise<GameTemplateProps> {
   const descriptionHTML = `
   <div class="description">
     <div class="banner welcome-offer-banner ng-scope ng-hide" welcome-offer-banner="" timer="1403717740000"
@@ -96,7 +97,10 @@ async function getGameProps() {
       publisher: 'CD PROJEKT RED',
       rating: 'BR18',
       genres: ['Action', 'Role-playing']
-    } as GameDetailsProps
+    },
+    upcomingGames: gamesMock,
+    upcomingHighlight: highlightMock,
+    recommendedGames: gamesMock
   }
 }
 
