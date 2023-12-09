@@ -27,12 +27,16 @@ const Menu = ({ $username }: MenuProps) => {
         </S.IconWrapper>
       </MediaMatch>
       <S.LogoWrapper>
-        <Logo $hideOnMobile />
+        <Link href={'/'}>
+          <Logo $hideOnMobile />
+        </Link>
       </S.LogoWrapper>
 
       <MediaMatch $greaterThan="medium">
         <S.MenuNav>
-          <S.MenuLink href="#">Home</S.MenuLink>
+          <Link href={'/'} passHref legacyBehavior>
+            <S.MenuLink>Home</S.MenuLink>
+          </Link>
           <S.MenuLink href="#">Explore</S.MenuLink>
         </S.MenuNav>
       </MediaMatch>
