@@ -7,6 +7,7 @@ import gamesMock from '@/components/GameCardSlider/mock'
 import highlightMock from '@/components/Highlight/mock'
 
 const props = {
+  games: gamesMock,
   recommendedHighlight: highlightMock,
   recommendedGames: gamesMock
 }
@@ -25,6 +26,24 @@ describe('<Wishlist />', () => {
     expect(
       screen.getByRole('heading', { name: /wishlist/i })
     ).toBeInTheDocument()
+
+    expect(screen.getAllByText(/population zero/i)).toHaveLength(6)
+
     expect(screen.getByTestId('Mock Showcase')).toBeInTheDocument()
+  })
+
+  it('should render empty there are no games', () => {
+    renderWithTheme(
+      <Wishlist
+        recommendedHighlight={highlightMock}
+        recommendedGames={gamesMock}
+      />
+    )
+
+    expect(screen.queryByText(/population zero/i)).not.toBeInTheDocument()
+
+    expect(
+      screen.getByRole('heading', { name: /your wishlist is empty/i })
+    ).toBeInTheDocument()
   })
 })

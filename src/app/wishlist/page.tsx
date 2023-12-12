@@ -5,6 +5,7 @@ import gamesMock from '@/components/GameCardSlider/mock'
 
 export async function getWishlistProps(): Promise<WishlistProps> {
   return {
+    games: gamesMock,
     recommendedHighlight: highlightMock,
     recommendedGames: gamesMock
   }
