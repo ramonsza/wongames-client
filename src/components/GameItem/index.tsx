@@ -8,7 +8,7 @@ export type PaymentInfoProps = {
   purchaseDate: string
 }
 
-type GameItemProps = {
+export type GameItemProps = {
   img: string
   title: string
   price: string
