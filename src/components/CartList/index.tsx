@@ -1,7 +1,7 @@
 import GameItem, { GameItemProps } from '@/components/GameItem'
 import * as S from './styles'
 
-type CartListProps = {
+export type CartListProps = {
   items: GameItemProps[]
   total: string
 }
