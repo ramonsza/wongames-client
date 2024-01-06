@@ -89,6 +89,8 @@ exports[`<TextField /> Renders with error 1`] = `
     </div>
     <input
       class="c7"
+      id="TextField"
+      name="TextField"
       type="text"
       value=""
     />
