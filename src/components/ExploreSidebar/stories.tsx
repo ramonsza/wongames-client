@@ -10,6 +10,9 @@ export default {
     backgrounds: {
       default: 'won-dark'
     }
+  },
+  argTypes: {
+    onFilter: { action: 'checked' }
   }
 } as Meta
 
@@ -18,5 +21,13 @@ type Story = StoryObj<typeof ExploreSidebar>
 export const Default: Story = {
   args: {
     items
+  }
+}
+
+export const WithInitialValues: Story = {
+  args: {
+    items,
+    initialValues: { windows: true, sort_by: 'low-to-high' },
+    onFilter: () => console.log('teste')
   }
 }
