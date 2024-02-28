@@ -12,3 +12,11 @@ describe('<CartList />', () => {
     expect(screen.getByText('R$ 430,00')).toHaveStyle({ color: '#F231A5' })
   })
 })
+
+describe('<CartList />', () => {
+  it('should render the button', () => {
+    renderWithTheme(<CartList items={mockItems} total="R$ 430,00" hasButton />)
+
+    expect(screen.getByText(/buy it now/i)).toBeInTheDocument()
+  })
+})
