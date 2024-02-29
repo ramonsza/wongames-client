@@ -30,3 +30,11 @@ export const Default: Story = {
     total: 'R$ 430,00'
   }
 }
+
+export const Empty: Story = {
+  render: (args) => (
+    <div style={{ maxWidth: '800px' }}>
+      <CartList {...args} />
+    </div>
+  )
+}

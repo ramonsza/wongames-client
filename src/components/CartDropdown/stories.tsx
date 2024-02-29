@@ -27,3 +27,13 @@ export const Default: Story = {
     total: 'R$ 300,00'
   }
 }
+
+export const Empty: Story = {
+  render: (args) => (
+    <div
+      style={{ maxWidth: '98%', display: 'flex', justifyContent: 'flex-end' }}
+    >
+      <CartDropdown {...args} />
+    </div>
+  )
+}
