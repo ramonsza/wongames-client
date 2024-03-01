@@ -6,7 +6,7 @@ import CartIcon from '@/components/CartIcon'
 
 export type CartDropDownProps = {
   items?: GameItemProps[]
-  total: string
+  total?: string
 }
 
 const CartDropdown = ({ items, total }: CartDropDownProps) => (
