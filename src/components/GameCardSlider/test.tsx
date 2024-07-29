@@ -7,6 +7,7 @@ import { screen } from '@testing-library/react'
 const items = [
   {
     title: 'Population Zero',
+    slug: 'population-zero-1',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x140',
     price: 'R$ 235,00',
@@ -14,6 +15,7 @@ const items = [
   },
   {
     title: 'Population Zero',
+    slug: 'population-zero-1',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x141',
     price: 'R$ 235,00',
@@ -21,6 +23,7 @@ const items = [
   },
   {
     title: 'Population Zero',
+    slug: 'population-zero-1',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x142',
     price: 'R$ 235,00',
@@ -28,6 +31,7 @@ const items = [
   },
   {
     title: 'Population Zero',
+    slug: 'population-zero-1',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x143',
     price: 'R$ 235,00',
@@ -35,6 +39,7 @@ const items = [
   },
   {
     title: 'Population Zero',
+    slug: 'population-zero-1',
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/willianjusten/300x144',
     price: 'R$ 235,00',

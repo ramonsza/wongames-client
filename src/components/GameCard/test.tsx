@@ -5,6 +5,7 @@ import GameCard from '.'
 import theme from '@/styles/theme'
 
 const props = {
+  slug: 'population-zero',
   title: 'Population Zero',
   developer: 'Rockstar Games',
   img: 'https://source.unsplash.com/user/willianjusten/300x140',
@@ -27,7 +28,10 @@ describe('<GameCard />', () => {
       'src',
       props.img
     )
-
+    expect(screen.getByRole('link', { name: props.title })).toHaveAttribute(
+      'href',
+      `game/${props.slug}`
+    )
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
   })
 

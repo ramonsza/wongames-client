@@ -1,9 +1,11 @@
+import Link from 'next/link'
 import { Heart, ShoppingCart } from '@phosphor-icons/react'
 import * as S from './styles'
 import Button from '@/components/Button'
 import Ribbon, { RibbonColor, RibbonSize } from '@/components/Ribbon'
 
 export type GameCardProps = {
+  slug: string
   title: string
   developer: string
   img: string
@@ -17,6 +19,7 @@ export type GameCardProps = {
 }
 
 const GameCard = ({
+  slug,
   title,
   developer,
   img,
@@ -34,14 +37,18 @@ const GameCard = ({
         {ribbon}
       </Ribbon>
     )}
-    <S.ImageBox>
-      <img src={img} alt={title} />
-    </S.ImageBox>
+    <Link href={`game/${slug}`} passHref legacyBehavior>
+      <S.ImageBox>
+        <img src={img} alt={title} />
+      </S.ImageBox>
+    </Link>
     <S.Content>
-      <S.Info>
-        <S.Title>{title}</S.Title>
-        <S.Developer>{developer}</S.Developer>
-      </S.Info>
+      <Link href={`game/${slug}`} passHref legacyBehavior>
+        <S.Info>
+          <S.Title>{title}</S.Title>
+          <S.Developer>{developer}</S.Developer>
+        </S.Info>
+      </Link>
       <S.FavButton onClick={onFav} role="button">
         {favorite ? (
           <Heart size={25} aria-label="Remove from Wishlist" weight="fill" />

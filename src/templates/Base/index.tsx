@@ -1,4 +1,3 @@
-'use client'
 import Menu from '@/components/Menu'
 import * as S from './styles'
 import { Container } from '@/components/Container'
